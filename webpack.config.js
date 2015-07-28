@@ -11,7 +11,8 @@
             loading : './src/js/page/loading.js',
             button : './src/js/page/button.js',
             tab : './src/js/page/tab.js',
-            tag : './src/js/page/tag.js'
+            tag : './src/js/page/tag.js',
+            searchbar : './src/js/page/searchbar.js'
         },
         output: {
             path: 'dist/js/page',

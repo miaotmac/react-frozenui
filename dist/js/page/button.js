@@ -1,16 +1,13 @@
 webpackJsonp([0],{
 
 /***/ 0:
-/*!*******************************!*\
-  !*** ./src/js/page/button.js ***!
-  \*******************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	var React = __webpack_require__(/*! react */ 1),
-	    Button = __webpack_require__(/*! ../component/Button */ 157);
-	
+	var React = __webpack_require__(1),
+	    Button = __webpack_require__(157);
+
 	var wrap = document.querySelector('.wrap');
-	
+
 	var buttonsInstance = (
 	  React.createElement("div", null, 
 	        React.createElement("section", {class: "ui-container"}, 
@@ -190,30 +187,27 @@ webpackJsonp([0],{
 	        )
 	  )
 	);
-	
+
 	React.render(
 	    buttonsInstance, wrap
 	);
-	
+
 
 
 /***/ },
 
 /***/ 157:
-/*!************************************!*\
-  !*** ./src/js/component/Button.js ***!
-  \************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	
-	var React = __webpack_require__(/*! react */ 1);
-	var classNames = __webpack_require__(/*! classnames */ 158);
-	var ClassNameMixin = __webpack_require__(/*! ../mixins/ClassNameMixin */ 159);
-	
+
+	var React = __webpack_require__(1);
+	var classNames = __webpack_require__(158);
+	var ClassNameMixin = __webpack_require__(159);
+
 	var Button = React.createClass({displayName: "Button",
 	  mixins: [ClassNameMixin],
-	
+
 	  propTypes: {
 	    classPrefix: React.PropTypes.string.isRequired,
 	    active: React.PropTypes.bool,
@@ -225,7 +219,7 @@ webpackJsonp([0],{
 	    href: React.PropTypes.string,
 	    target: React.PropTypes.string
 	  },
-	
+
 	  getDefaultProps: function() {
 	    return {
 	      fzClass:'ui-btn',
@@ -234,10 +228,10 @@ webpackJsonp([0],{
 	      fzStyle: 'primary'
 	    };
 	  },
-	
+
 	  renderButton: function(classSet) {
 	    var Component = this.props.componentTag || 'button';
-	
+
 	    return (
 	      React.createElement(Component, React.__spread({}, 
 	        this.props, 
@@ -246,56 +240,53 @@ webpackJsonp([0],{
 	      )
 	    );
 	  },
-	
+
 	  render: function() {
 	    var classSet = this.getClassSet(true);
 	    return this.renderButton(classSet);
 	  }
 	});
-	
+
 	module.exports = Button;
 
 /***/ },
 
 /***/ 159:
-/*!*****************************************!*\
-  !*** ./src/js/mixins/ClassNameMixin.js ***!
-  \*****************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	
-	var React = __webpack_require__(/*! react */ 1);
-	var constants = __webpack_require__(/*! ../constants */ 160);
+
+	var React = __webpack_require__(1);
+	var constants = __webpack_require__(160);
 	var nsPrefix = (constants.NAMESPACE ? constants.NAMESPACE + '-' : '');
-	
+
 	module.exports = {
 	  getClassSet: function(ignorePrefix) {
 	    var classNames = {};
 	    // uses `.am-` as prefix if `classPrefix` is not defined
 	    var prefix = nsPrefix;
-	
+
 	    if (this.props.classPrefix) {
 	      var classPrefix = this.setClassNamespace();
-	
+
 	      prefix = classPrefix + '-';
-	
+
 	      // don't return prefix if flag set
 	      !ignorePrefix && (classNames[classPrefix] = true);
 	    }
-	
+
 	    let fzSize = this.props.fzSize;
 	    let fzStyle = this.props.fzStyle;
 	    let fzClass = this.props.fzClass;
-	
+
 	    if(fzClass) {
 	      classNames[fzClass] = true;
 	    }
-	
+
 	    if (fzSize) {
 	      classNames[prefix + fzSize] = true;
 	    }
-	
+
 	    
 	    if(Array.isArray(fzStyle)) {
 	        fzStyle.map(function(i){
@@ -304,38 +295,38 @@ webpackJsonp([0],{
 	    }else if(fzStyle) {
 	        classNames[prefix + fzStyle] = true;
 	    }
-	
+
 	    // add theme className for widgets
 	    if (this.props.theme) {
 	      classNames[prefix + this.props.theme] = true;
 	    }
-	
+
 	    // states
 	    classNames[constants.CLASSES.active] = this.props.active;
 	    classNames[constants.CLASSES.disabled] = this.props.disabled;
-	
+
 	    // shape
 	    classNames[constants.CLASSES.radius] = this.props.radius;
 	    classNames[constants.CLASSES.round] = this.props.round;
-	
+
 	    // clearfix
 	    classNames[constants.CLASSES.cf] = this.props.cf;
-	
+
 	    // am-divider
 	    if (this.props.classPrefix !== 'divider') {
 	      classNames[constants.CLASSES.divider] = this.props.divider;
 	    }
-	
+
 	    return classNames;
 	  },
-	
+
 	  // add namespace to classPrefix
 	  setClassNamespace: function(classPrefix) {
 	    var prefix = classPrefix || this.props.classPrefix || '';
-	
+
 	    return nsPrefix + prefix;
 	  },
-	
+
 	  prefixClass: function(subClass) {
 	    return this.setClassNamespace() + '-' + subClass;
 	  }
@@ -345,21 +336,18 @@ webpackJsonp([0],{
 /***/ },
 
 /***/ 160:
-/*!*****************************!*\
-  !*** ./src/js/constants.js ***!
-  \*****************************/
 /***/ function(module, exports) {
 
 	'use strict';
-	
+
 	const NAMESPACE = '';
 	var setNamespace = function(className) {
 	  return (NAMESPACE ? NAMESPACE + '-' : '') + className;
 	};
-	
+
 	module.exports = {
 	  NAMESPACE: NAMESPACE,
-	
+
 	  CLASSES: {
 	    active: setNamespace('active'),
 	    disabled: setNamespace('disabled'),
@@ -372,7 +360,7 @@ webpackJsonp([0],{
 	    fl: setNamespace('fl'),
 	    fr: setNamespace('fr')
 	  },
-	
+
 	  STYLES: {
 	    default: 'default',
 	    primary: 'primary',
@@ -381,9 +369,9 @@ webpackJsonp([0],{
 	    warning: 'warning',
 	    danger: 'danger'
 	  },
-	
+
 	  SIZES: {
-	
+
 	  }
 	};
 
@@ -391,4 +379,3 @@ webpackJsonp([0],{
 /***/ }
 
 });
-//# sourceMappingURL=button.js.map
