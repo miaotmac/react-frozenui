@@ -1,0 +1,28 @@
+{
+  "name": "react-frozenui",
+  "version": "0.0.0",
+  "description": "React版FrozenUI的CSS组件库,基于腾讯手Q样式规范",
+  "main":  [
+    './dist/js/common.js'
+  ],
+   ignore: [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "svn"
+  ],
+  "keywords": [
+    "frozenui－react",
+    "CSS3",
+    "react",
+    "frozen",
+    "frozenui",
+    "tencent",
+    "qq"
+  ],
+  "authors": [
+    "QQVip"
+  ],
+  "license": "MIT",
+  "homepage": "http://frozenui.github.io/"
+}
