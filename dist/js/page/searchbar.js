@@ -32,7 +32,6 @@ webpackJsonp([2],{
 	module.exports = {
 	  getClassSet: function(ignorePrefix) {
 	    var classNames = {};
-	    // uses `.am-` as prefix if `classPrefix` is not defined
 	    var prefix = nsPrefix;
 
 	    if (this.props.classPrefix) {
