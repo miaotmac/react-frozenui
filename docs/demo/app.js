@@ -1,5 +1,5 @@
 var React = require('react'),
-    SearchBar = require('../component/SearchBar');
+    SearchBar = require('../../src/js/component/SearchBar');
 
 var wrap = document.querySelector('.wrap');
 
@@ -10,4 +10,3 @@ var buttonsInstance = (
 React.render(
     buttonsInstance, wrap
 );
-

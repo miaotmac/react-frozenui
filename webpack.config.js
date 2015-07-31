@@ -2,22 +2,16 @@
     var webpack = require('webpack');
     var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('common.js');
     //var ExtractTextPlugin = require("extract-text-webpack-plugin");
-
+    var entry = require('./index.js');
     module.exports = {
         //plugins: [commonsPlugin, new ExtractTextPlugin("[name].css")],
         plugins: [commonsPlugin],
-        entry: {
-            tab : './src/js/page/tab.js',
-            loading : './src/js/page/loading.js',
-            button : './src/js/page/button.js',
-            tab : './src/js/page/tab.js',
-            tag : './src/js/page/tag.js',
-            searchbar : './src/js/page/searchbar.js'
-        },
+        entry: entry,
         output: {
             path: 'dist/js/page',
             filename: '[name].js'
         },
+
         module: {
             loaders: [
                 { test: /\.css$/, loader: 'style-loader!css-loader' },

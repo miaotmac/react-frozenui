@@ -1,1 +1,141 @@
-webpackJsonp([3],{0:function(e,t,n){"use strict";var r=n(6),o=n(44);Tag=n(43);var a=document.querySelector(".wrap"),i=r.createElement("div",null,r.createElement("section",{"class":"ui-container"},r.createElement(o,null,r.createElement(Tag,{fzStyle:"selected"}))));r.render(i,a)},13:function(e,t,n){"use strict";var r=(n(6),n(20)),o=r.NAMESPACE?r.NAMESPACE+"-":"";e.exports={getClassSet:function(e){var t={},n=o;if(this.props.classPrefix){var a=this.setClassNamespace();n=a+"-",!e&&(t[a]=!0)}var i=this.props.fzSize,s=this.props.fzStyle,u=this.props.fzClass;return u&&(t[u]=!0),i&&(t[n+i]=!0),Array.isArray(s)?s.map(function(e){t[n+e]=!0}):s&&(t[n+s]=!0),this.props.theme&&(t[n+this.props.theme]=!0),t[r.CLASSES.active]=this.props.active,t[r.CLASSES.disabled]=this.props.disabled,t[r.CLASSES.radius]=this.props.radius,t[r.CLASSES.round]=this.props.round,t[r.CLASSES.cf]=this.props.cf,"divider"!==this.props.classPrefix&&(t[r.CLASSES.divider]=this.props.divider),t},setClassNamespace:function(e){var t=e||this.props.classPrefix||"";return o+t},prefixClass:function(e){return this.setClassNamespace()+"-"+e}}},20:function(e,t){"use strict";var n="",r=function(e){return(n?n+"-":"")+e};e.exports={NAMESPACE:n,CLASSES:{active:r("active"),disabled:r("disabled"),round:r("round"),radius:r("radius"),square:r("square"),circle:r("circle"),divider:r("divider"),cf:r("cf"),fl:r("fl"),fr:r("fr")},STYLES:{"default":"default",primary:"primary",secondary:"secondary",success:"success",warning:"warning",danger:"danger"},SIZES:{}}},43:function(e,t,n){"use strict";var r=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},o=n(6),a=n(21),i=n(13),s=o.createClass({displayName:"Tag",mixins:[i],propTypes:{classPrefix:o.PropTypes.string.isRequired},getDefaultProps:function(){return{fzClass:"ui-grid-halve-img",classPrefix:"ui-tag"}},renderTag:function(e){return o.createElement("li",null,o.createElement("div",r({},this.props,{className:a(this.props.className,e)}),this.props.children))},render:function(){var e=this.getClassSet(!0);return this.renderTag(e)}});e.exports=s},44:function(e,t,n){"use strict";var r=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},o=n(6),a=n(21),i=n(13),s=o.createClass({displayName:"TagList",mixins:[i],getDefaultProps:function(){return{fzClass:"ui-grid-halve"}},render:function(){var e=this.getClassSet(!0);return o.createElement("ul",r({},this.props,{className:a(this.props.className,e)}),this.props.children)}});e.exports=s}});
+webpackJsonp([4],{
+
+/***/ 0:
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Created by vajoylan on 2015/7/7.
+	 */
+
+	'use strict';
+
+	var globalEventHandler = __webpack_require__(169);
+	var React = __webpack_require__(1),
+	    PropTypes = React.PropTypes;
+
+	var Tab = React.createClass({
+	    displayName: 'Tab',
+
+	    timer: null,
+	    mixins: [globalEventHandler],
+	    propTypes: {
+	        defaultActiveKey: PropTypes.number, //默认激活标签项
+	        autoPlay: PropTypes.bool, //是否自动播放
+	        playTime: PropTypes.number
+	    },
+	    getDefaultProps: function getDefaultProps() {
+	        return {
+	            autoPlay: true,
+	            playTime: 6000,
+	            defaultActiveKey: 1
+	        };
+	    },
+	    getInitialState: function getInitialState() {
+	        return {
+	            actKey: this.props.defaultActiveKey,
+	            tabWidth: 0
+	        };
+	    },
+	    componentDidMount: function componentDidMount() {
+	        var tabWidth = this.getDOMNode().getBoundingClientRect().width;
+	        this.setState({ tabWidth: tabWidth });
+	        var content = this.getDOMNode().querySelector('.ui-tab-content');
+	        setTimeout(function () {
+	            content.style.webkitTransition = '-webkit-transform .3s';
+	        }, 10);
+
+	        this.autoPlay();
+	    },
+	    handleClick: function handleClick(index) {
+	        this.setState({ actKey: index });
+	        clearTimeout(this.timer);
+	        this.autoPlay();
+	    },
+	    renderPanes: function renderPanes(child, index) {
+	        return React.cloneElement(child, {
+	            isAct: this.state.actKey == index + 1,
+	            handleClick: this.handleClick.bind(this, index + 1)
+	        });
+	    },
+	    renderContents: function renderContents(child, index) {
+	        return React.createElement(
+	            'li',
+	            { className: this.state.actKey == index + 1 ? 'current' : null },
+	            child.props.children
+	        );
+	    },
+	    autoPlay: function autoPlay() {
+	        if (!this.props.autoPlay) return;
+	        this.timer = setTimeout((function () {
+	            var nextKey = this.state.actKey == this.props.children.length ? 1 : this.state.actKey + 1;
+	            this.setState({ actKey: nextKey });
+	            this.autoPlay();
+	        }).bind(this), this.props.playTime);
+	    },
+	    render: function render() {
+	        this.windowResize((function () {
+	            var tabWidth = this.getDOMNode().getBoundingClientRect().width;
+	            this.setState({ tabWidth: tabWidth });
+	        }).bind(this));
+
+	        var style = {
+	            width: 100 * this.props.children.length + '%',
+	            WebkitTransform: 'translateX(-' + this.state.tabWidth * (this.state.actKey - 1) + 'px)'
+	        };
+	        return React.createElement(
+	            'div',
+	            { className: "ui-tab" },
+	            React.createElement(
+	                'ul',
+	                { className: "ui-tab-nav ui-border-b" },
+	                React.Children.map(this.props.children, this.renderPanes)
+	            ),
+	            React.createElement(
+	                'ul',
+	                { className: "ui-tab-content", style: style },
+	                React.Children.map(this.props.children, this.renderContents)
+	            )
+	        );
+	    }
+	});
+
+	module.exports = Tab;
+
+/***/ },
+
+/***/ 169:
+/***/ function(module, exports) {
+
+	'use strict';
+
+	var throttle = function throttle(fn, interval) {
+	    //节流
+	    var _self = fn,
+	        timer,
+	        firstTime = true;
+	    return function () {
+	        var args = arguments,
+	            _me = this;
+	        if (firstTime) {
+	            _self.apply(_me, args);
+	            return firstTime = false;
+	        }
+	        if (timer) return false;
+	        timer = setTimeout(function () {
+	            clearTimeout(timer);
+	            timer = null;
+	            _self.apply(_me, args);
+	        }, interval || 300);
+	    };
+	};
+
+	module.exports = {
+	    windowResize: function windowResize(cb) {
+	        if (typeof cb !== 'function') return;
+	        window.onresize = throttle(cb);
+	    }
+	};
+
+/***/ }
+
+});

@@ -1,1 +1,232 @@
-webpackJsonp([4],{0:function(e,t,n){"use strict";var r=n(6),o=n(87),a=document.querySelector(".wrap"),i=r.createElement("div",null,r.createElement("section",{"class":"ui-container"},r.createElement("section",{id:"btn"},r.createElement("div",{"class":"demo-item"},r.createElement("p",{"class":"demo-desc"},"普通小按钮"),r.createElement("div",{"class":"demo-block"},r.createElement("div",{"class":"ui-btn-wrap"},r.createElement(o,{componentTag:"a",fzSize:"s"},"确定"),r.createElement(o,{fzSize:"s",active:!0},"确定"),r.createElement(o,{fzSize:"s",disabled:!0},"取消"),r.createElement(o,{fzSize:"s",disabled:!0},"取消")))),r.createElement("div",{"class":"demo-item"},r.createElement("p",{"class":"demo-desc"},"普通按钮"),r.createElement("div",{"class":"demo-block"},r.createElement("div",{"class":"ui-btn-wrap"},r.createElement(o,null,"确定"),r.createElement(o,{active:!0},"确定"),r.createElement(o,{disabled:!0},"取消")))),r.createElement("div",{"class":"demo-item"},r.createElement("p",{"class":"demo-desc"},"带进度的按钮"),r.createElement("div",{"class":"demo-block"},r.createElement("div",{"class":"ui-btn-wrap"},r.createElement(o,{fzStyle:"progress"},"确定"),r.createElement(o,{fzStyle:"progress"},r.createElement("span",{"class":"ui-btn-inner"},r.createElement("span",null,"50%"))),r.createElement(o,{fzStyle:"progress",disabled:!0},"取消")))),r.createElement("div",{"class":"demo-item"},r.createElement("p",{"class":"demo-desc"},"蓝色按钮"),r.createElement("div",{"class":"demo-block"},r.createElement("div",{"class":"ui-btn-wrap"},r.createElement(o,{fzStyle:"primary"},"确定"),r.createElement(o,{fzStyle:"primary",active:!0},"确定"),r.createElement(o,{fzStyle:"primary",disabled:!0},"取消")))),r.createElement("div",{"class":"demo-item"},r.createElement("p",{"class":"demo-desc"},"红色按钮"),r.createElement("div",{"class":"demo-block"},r.createElement("div",{"class":"ui-btn-wrap"},r.createElement(o,{fzStyle:"danger"},"确定"),r.createElement(o,{fzStyle:"danger",active:!0},"确定"),r.createElement(o,{fzStyle:"danger",disabled:!0},"取消")))),r.createElement("div",{"class":"demo-item"},r.createElement("p",{"class":"demo-desc"},"普通大按钮"),r.createElement("div",{"class":"demo-block"},r.createElement("div",{"class":"ui-btn-wrap"},r.createElement(o,{fzSize:"lg"},"确定")),r.createElement("div",{"class":"ui-btn-wrap"},r.createElement(o,{fzSize:"lg",active:!0},"确定")),r.createElement("div",{"class":"ui-btn-wrap"},r.createElement(o,{fzSize:"lg",disabled:!0},"取消")))),r.createElement("div",{"class":"demo-item"},r.createElement("p",{"class":"demo-desc"},"蓝色大按钮"),r.createElement("div",{"class":"demo-block"},r.createElement("div",{"class":"ui-btn-wrap"},r.createElement(o,{fzSize:"lg",fzStyle:"primary"},"确定")),r.createElement("div",{"class":"ui-btn-wrap"},r.createElement(o,{fzSize:"lg",fzStyle:"primary",active:!0},"确定")),r.createElement("div",{"class":"ui-btn-wrap"},r.createElement(o,{fzSize:"lg",fzStyle:"primary",disabled:!0},"取消")))),r.createElement("div",{"class":"demo-item"},r.createElement("p",{"class":"demo-desc"},"红色大按钮"),r.createElement("div",{"class":"demo-block"},r.createElement("div",{"class":"ui-btn-wrap"},r.createElement(o,{fzSize:"lg",fzStyle:"danger"},"确定")),r.createElement("div",{"class":"ui-btn-wrap"},r.createElement(o,{fzSize:"lg",fzStyle:"danger",active:!0},"确定")),r.createElement("div",{"class":"ui-btn-wrap"},r.createElement(o,{fzSize:"lg",fzStyle:"danger",disabled:!0},"取消")))),r.createElement("div",{"class":"demo-item"},r.createElement("p",{"class":"demo-desc"},"普通按钮组"),r.createElement("div",{"class":"demo-block"},r.createElement("div",{"class":"ui-btn-group"},r.createElement(o,{fzSize:"lg"},"拒绝"),r.createElement(o,{fzSize:"lg"},"拒绝"),r.createElement(o,{fzSize:"lg",fzStyle:"primary"},"同意")))),r.createElement("div",{"class":"demo-item"},r.createElement("p",{"class":"demo-desc"},"底部按钮组"),r.createElement("div",{"class":"demo-block"},r.createElement("div",{"class":"ui-footer ui-footer-stable ui-btn-group ui-border-t"},r.createElement(o,{fzSize:"lg"},"拒绝"),r.createElement(o,{fzSize:"lg"},"拒绝"),r.createElement(o,{fzSize:"lg",fzStyle:"primary"},"同意")))))));r.render(i,a)},13:function(e,t,n){"use strict";var r=(n(6),n(20)),o=r.NAMESPACE?r.NAMESPACE+"-":"";e.exports={getClassSet:function(e){var t={},n=o;if(this.props.classPrefix){var a=this.setClassNamespace();n=a+"-",!e&&(t[a]=!0)}var i=this.props.fzSize,s=this.props.fzStyle,u=this.props.fzClass;return u&&(t[u]=!0),i&&(t[n+i]=!0),Array.isArray(s)?s.map(function(e){t[n+e]=!0}):s&&(t[n+s]=!0),this.props.theme&&(t[n+this.props.theme]=!0),t[r.CLASSES.active]=this.props.active,t[r.CLASSES.disabled]=this.props.disabled,t[r.CLASSES.radius]=this.props.radius,t[r.CLASSES.round]=this.props.round,t[r.CLASSES.cf]=this.props.cf,"divider"!==this.props.classPrefix&&(t[r.CLASSES.divider]=this.props.divider),t},setClassNamespace:function(e){var t=e||this.props.classPrefix||"";return o+t},prefixClass:function(e){return this.setClassNamespace()+"-"+e}}},20:function(e,t){"use strict";var n="",r=function(e){return(n?n+"-":"")+e};e.exports={NAMESPACE:n,CLASSES:{active:r("active"),disabled:r("disabled"),round:r("round"),radius:r("radius"),square:r("square"),circle:r("circle"),divider:r("divider"),cf:r("cf"),fl:r("fl"),fr:r("fr")},STYLES:{"default":"default",primary:"primary",secondary:"secondary",success:"success",warning:"warning",danger:"danger"},SIZES:{}}},87:function(e,t,n){"use strict";var r=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},o=n(6),a=n(21),i=n(13),s=o.createClass({displayName:"Button",mixins:[i],propTypes:{classPrefix:o.PropTypes.string.isRequired,active:o.PropTypes.bool,block:o.PropTypes.bool,disabled:o.PropTypes.bool,radius:o.PropTypes.bool,round:o.PropTypes.bool,componentTag:o.PropTypes.node,href:o.PropTypes.string,target:o.PropTypes.string},getDefaultProps:function(){return{fzClass:"ui-btn",classPrefix:"ui-btn",type:"button",fzStyle:"primary"}},renderButton:function(e){var t=this.props.componentTag||"button";return o.createElement(t,r({},this.props,{className:a(this.props.className,e)}),this.props.children)},render:function(){var e=this.getClassSet(!0);return this.renderButton(e)}});e.exports=s}});
+webpackJsonp([1],{
+
+/***/ 0:
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var React = __webpack_require__(1);
+	var classNames = __webpack_require__(158);
+	var ClassNameMixin = __webpack_require__(159);
+
+	var Button = React.createClass({
+	  displayName: 'Button',
+
+	  mixins: [ClassNameMixin],
+
+	  propTypes: {
+	    classPrefix: React.PropTypes.string.isRequired,
+	    active: React.PropTypes.bool,
+	    block: React.PropTypes.bool,
+	    disabled: React.PropTypes.bool,
+	    radius: React.PropTypes.bool,
+	    round: React.PropTypes.bool,
+	    componentTag: React.PropTypes.node,
+	    href: React.PropTypes.string,
+	    target: React.PropTypes.string
+	  },
+
+	  getDefaultProps: function getDefaultProps() {
+	    return {
+	      fzClass: 'ui-btn',
+	      classPrefix: 'ui-btn',
+	      type: 'button',
+	      fzStyle: 'primary'
+	    };
+	  },
+
+	  renderButton: function renderButton(classSet) {
+	    var Component = this.props.componentTag || 'button';
+
+	    return React.createElement(
+	      Component,
+	      _extends({}, this.props, {
+	        className: classNames(this.props.className, classSet) }),
+	      this.props.children
+	    );
+	  },
+
+	  render: function render() {
+	    var classSet = this.getClassSet(true);
+	    return this.renderButton(classSet);
+	  }
+	});
+
+	module.exports = Button;
+
+/***/ },
+
+/***/ 158:
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+	  Copyright (c) 2015 Jed Watson.
+	  Licensed under the MIT License (MIT), see
+	  http://jedwatson.github.io/classnames
+	*/
+
+	function classNames() {
+		var classes = '';
+		var arg;
+
+		for (var i = 0; i < arguments.length; i++) {
+			arg = arguments[i];
+			if (!arg) {
+				continue;
+			}
+
+			if ('string' === typeof arg || 'number' === typeof arg) {
+				classes += ' ' + arg;
+			} else if (Object.prototype.toString.call(arg) === '[object Array]') {
+				classes += ' ' + classNames.apply(null, arg);
+			} else if ('object' === typeof arg) {
+				for (var key in arg) {
+					if (!arg.hasOwnProperty(key) || !arg[key]) {
+						continue;
+					}
+					classes += ' ' + key;
+				}
+			}
+		}
+		return classes.substr(1);
+	}
+
+	// safely export classNames for node / browserify
+	if (typeof module !== 'undefined' && module.exports) {
+		module.exports = classNames;
+	}
+
+	// safely export classNames for RequireJS
+	if (true) {
+		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function() {
+			return classNames;
+		}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	}
+
+
+/***/ },
+
+/***/ 159:
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+	var constants = __webpack_require__(160);
+	var nsPrefix = constants.NAMESPACE ? constants.NAMESPACE + '-' : '';
+
+	module.exports = {
+	  getClassSet: function getClassSet(ignorePrefix) {
+	    var classNames = {};
+	    var prefix = nsPrefix;
+
+	    if (this.props.classPrefix) {
+	      var classPrefix = this.setClassNamespace();
+
+	      prefix = classPrefix + '-';
+
+	      // don't return prefix if flag set
+	      !ignorePrefix && (classNames[classPrefix] = true);
+	    }
+
+	    var fzSize = this.props.fzSize;
+	    var fzStyle = this.props.fzStyle;
+	    var fzClass = this.props.fzClass;
+
+	    if (fzClass) {
+	      classNames[fzClass] = true;
+	    }
+
+	    if (fzSize) {
+	      classNames[prefix + fzSize] = true;
+	    }
+
+	    if (Array.isArray(fzStyle)) {
+	      fzStyle.map(function (i) {
+	        classNames[prefix + i] = true;
+	      });
+	    } else if (fzStyle) {
+	      classNames[prefix + fzStyle] = true;
+	    }
+
+	    // add theme className for widgets
+	    if (this.props.theme) {
+	      classNames[prefix + this.props.theme] = true;
+	    }
+
+	    // states
+	    classNames[constants.CLASSES.active] = this.props.active;
+	    classNames[constants.CLASSES.disabled] = this.props.disabled;
+
+	    // shape
+	    classNames[constants.CLASSES.radius] = this.props.radius;
+	    classNames[constants.CLASSES.round] = this.props.round;
+
+	    // clearfix
+	    classNames[constants.CLASSES.cf] = this.props.cf;
+
+	    // am-divider
+	    if (this.props.classPrefix !== 'divider') {
+	      classNames[constants.CLASSES.divider] = this.props.divider;
+	    }
+
+	    return classNames;
+	  },
+
+	  // add namespace to classPrefix
+	  setClassNamespace: function setClassNamespace(classPrefix) {
+	    var prefix = classPrefix || this.props.classPrefix || '';
+
+	    return nsPrefix + prefix;
+	  },
+
+	  prefixClass: function prefixClass(subClass) {
+	    return this.setClassNamespace() + '-' + subClass;
+	  }
+	};
+
+/***/ },
+
+/***/ 160:
+/***/ function(module, exports) {
+
+	'use strict';
+
+	var NAMESPACE = '';
+	var setNamespace = function setNamespace(className) {
+	  return (NAMESPACE ? NAMESPACE + '-' : '') + className;
+	};
+
+	module.exports = {
+	  NAMESPACE: NAMESPACE,
+
+	  CLASSES: {
+	    active: setNamespace('active'),
+	    disabled: setNamespace('disabled'),
+	    round: setNamespace('round'),
+	    radius: setNamespace('radius'),
+	    square: setNamespace('square'),
+	    circle: setNamespace('circle'),
+	    divider: setNamespace('divider'),
+	    cf: setNamespace('cf'),
+	    fl: setNamespace('fl'),
+	    fr: setNamespace('fr')
+	  },
+
+	  STYLES: {
+	    'default': 'default',
+	    primary: 'primary',
+	    secondary: 'secondary',
+	    success: 'success',
+	    warning: 'warning',
+	    danger: 'danger'
+	  },
+
+	  SIZES: {}
+	};
+
+/***/ }
+
+});

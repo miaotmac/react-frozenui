@@ -2,33 +2,38 @@
 
 let React = require('react');
 let classNames = require('classnames');
-let ClassNameMixin = require('../mixins/ClassNameMixin');
-let ListItem = require('./List');
+let ClassNameMixin = require('../../mixins/ClassNameMixin');
+let List= require('./List');
 let ListItem = require('./ListItem');
 
 
-let List = React.createClass({
+let PureList = React.createClass({
   mixins: [ClassNameMixin],
   getDefaultProps: function() {
     return {
       fzClass:'ui-list',
       classPrefix:'ui-list',
-      fzStyle:''
     };
   },
 
   render: function() {
-    let classSet = this.getClassSet(true);
-    classSet = classnames(classSet,"ui-border-tb");
     return (
-      <ul {...this.props} className={classNames(this.props.className, classSet)}>
-          {this.props.children}
-      </ul>
+      <List fzStyle="pure">
+        {
+          this.props.data.map(function(item){
+            return (
+                <ListItem>
+                  <p><span>{item.title}</span><span class="date">{item.date}</span></p>
+                  <h4>{item.content}</h4>
+                </ListItem>
+                );
+          })
+        }
+      </List>
     );
   }
-  
 });
 
-module.exports = List;
+module.exports = PureList;
 
 
