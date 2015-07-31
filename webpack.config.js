@@ -21,14 +21,14 @@
         module: {
             loaders: [
                 { test: /\.css$/, loader: 'style-loader!css-loader' },
-                //{ test: /\.css$/, loader: ExtractTextPlugin.extract("style-loader", "css-loader") },
                 { test: /\.js$/, loader: 'jsx-loader?harmony' },
                 { test: /\.scss$/, loader: 'style!css!sass?sourceMap'},
-                { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192'}
+                { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192'},
+                { test: /\.jsx?$/,exclude: /(node_modules|bower_components)/,loader: 'babel'}
             ]
         },
         resolve: {
-            root: 'E:/github/webpack/src',
+            root: '',
             extensions: ['', '.js', '.json', '.scss'],
             alias: {
                 

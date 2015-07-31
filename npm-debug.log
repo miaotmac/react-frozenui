@@ -1,0 +1,44 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'find', 'jquery' ]
+2 info using npm@2.10.1
+3 info using node@v0.12.4
+4 silly mapToRegistry name -/all
+5 silly mapToRegistry using default registry
+6 silly mapToRegistry registry http://registry.npm.taobao.org/
+7 silly mapToRegistry uri http://registry.npm.taobao.org/-/all
+8 info updateIndex /Users/zhangmiao/.npm/registry.npm.taobao.org/-/all/.cache.json
+9 warn Building the local index for the first time, please be patient
+10 silly update-index fetching http://registry.npm.taobao.org/-/all
+11 verbose request uri http://registry.npm.taobao.org/-/all
+12 verbose request no auth needed
+13 info attempt registry request try #1 at 11:39:23
+14 verbose request id fe79580a061447e6
+15 http request GET http://registry.npm.taobao.org/-/all
+16 http 200 http://registry.npm.taobao.org/-/all
+17 verbose headers { server: 'nginx/1.1.19',
+17 verbose headers   date: 'Thu, 30 Jul 2015 03:39:26 GMT',
+17 verbose headers   'content-type': 'application/json; charset=utf-8',
+17 verbose headers   etag: '"Ty+Piw41nnj4xV+ctzHtdQ=="',
+17 verbose headers   'x-readtime': '2549',
+17 verbose headers   'content-encoding': 'gzip',
+17 verbose headers   'x-cache': 'MISS from SK-SQUIDWEB-62',
+17 verbose headers   'x-cache-lookup': 'HIT from SK-SQUIDWEB-62:8080',
+17 verbose headers   'transfer-encoding': 'chunked' }
+18 verbose stack Error: true true: -/all
+18 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:247:14)
+18 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:176:7
+18 verbose stack     at Gunzip.onEnd (zlib.js:227:5)
+18 verbose stack     at Gunzip.emit (events.js:129:20)
+18 verbose stack     at _stream_readable.js:908:16
+18 verbose stack     at process._tickCallback (node.js:355:11)
+19 verbose statusCode 200
+20 verbose cwd /Users/zhangmiao/github/react-frozenui
+21 error Darwin 14.0.0
+22 error argv "node" "/usr/local/bin/npm" "find" "jquery"
+23 error node v0.12.4
+24 error npm  v2.10.1
+25 error code E200
+26 error true true: -/all
+27 error If you need help, you may report this error at:
+27 error     <https://github.com/npm/npm/issues>
+28 verbose exit [ 1, true ]

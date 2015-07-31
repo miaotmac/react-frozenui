@@ -1,8 +1,6 @@
 /**
  * Created by vajoylan on 2015/7/10.
  */
-require('../../css/reset.scss');
-require('../../css/frozen.css');
 
 var React = require('react'),
 	classnames = require('classnames'),
