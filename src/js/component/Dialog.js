@@ -1,8 +1,4 @@
-/**
- * Created by vajoylan on 2015/7/7.
- */
 
-var globalEventHandler = require('../component/globalEventHandler');
 var React = require('react'),
     classNames = require('classnames'),
     PropTypes = React.PropTypes;
@@ -18,7 +14,7 @@ var Dialog = React.createClass({
     },
     getInitialState: function () {
         return {
-            show:false
+            show:this.props.show
         }
     },
    
@@ -33,9 +29,15 @@ var Dialog = React.createClass({
             return children;
     },
 
-
+    handleClick : function(e){
+        this.props.handleButtonClick && 
+         typeof this.props.handleButtonClick[e.target.attributes["data-index"].value] == "function"
+         && this.props.handleButtonClick[e.target.attributes["data-index"].value]();
+         this.setState({show:false});
+    },
 
     render: function () {
+        var  self = this;
         return (
             <div  className={classNames("ui-dialog",{show:this.state.show})}>
                 <div className="ui-dialog-cnt">
@@ -48,7 +50,13 @@ var Dialog = React.createClass({
                        }
                     </div>
                     <div className="ui-dialog-ft ui-btn-group">
-                        <button type="button" data-role="button"  class="select" >关闭</button> 
+                        {
+                            this.props.buttons ? this.props.buttons.map(function(item,index){
+                               return <button type="button" data-index = {index} data-role="button" onClick = {self.handleClick} className="select" >{item}</button> 
+                        })
+                         :
+                            <button type="button" data-role="button"  onClick = {self.handleClick} class="select" >{this.props.buttonText}</button> 
+                        }
                     </div>
                 </div>        
             </div>

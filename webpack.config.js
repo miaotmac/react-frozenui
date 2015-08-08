@@ -16,7 +16,8 @@
             commonsPlugin
         ],
 
-        entry: [
+        entry : entry
+        /*entry: [
               //  entry
               'webpack-dev-server/client?http://127.0.0.1:3000',// WebpackDevServer host and port
               'webpack/hot/only-dev-server',
@@ -24,6 +25,7 @@
               './src/js/component/tag.js',
               './index.js'
                ]
+        */
         ,
         output: {
             path: path.join(__dirname, 'dist/js/'),
