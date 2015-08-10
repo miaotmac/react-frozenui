@@ -29,15 +29,14 @@ var Dialog = React.createClass({
             return children;
     },
 
-    handleClick : function(e){
+    handleClick : function(i){
         this.props.handleButtonClick && 
-         typeof this.props.handleButtonClick[e.target.attributes["data-index"].value] == "function"
-         && this.props.handleButtonClick[e.target.attributes["data-index"].value]();
+         typeof this.props.handleButtonClick[i] == "function"
+         && this.props.handleButtonClick[i]();
          this.setState({show:false});
     },
 
     render: function () {
-        var  self = this;
         return (
             <div  className={classNames("ui-dialog",{show:this.state.show})}>
                 <div className="ui-dialog-cnt">
@@ -52,10 +51,10 @@ var Dialog = React.createClass({
                     <div className="ui-dialog-ft ui-btn-group">
                         {
                             this.props.buttons ? this.props.buttons.map(function(item,index){
-                               return <button type="button" data-index = {index} data-role="button" onClick = {self.handleClick} className="select" >{item}</button> 
-                        })
+                               return (<button type="button" data-index = {index} data-role="button" onClick = {this.handleClick.bind(this,index)} className="select" >{item}</button> )
+                             },this)
                          :
-                            <button type="button" data-role="button"  onClick = {self.handleClick} class="select" >{this.props.buttonText}</button> 
+                            <button type="button" data-role="button"  onClick = {this.handleClick} class="select" >{this.props.buttonText}</button> 
                         }
                     </div>
                 </div>        
