@@ -1,12 +1,10 @@
-var React = require('react'),
-    SearchBar = require('../../src/js/component/SearchBar');
+let React = require('react');
+let wrap = document.querySelector('.wrap');
+let Header = require('./Header/Header');
+let App = React.createClass({
+	render:function(){
+		return (<Header></Header>);
+	}
+});
 
-var wrap = document.querySelector('.wrap');
-
-var buttonsInstance = (
-  <SearchBar searchText="qingshuru" placeholder="qingshuru" type="num" cancelText="qqxiao"/>
-);
-
-React.render(
-    buttonsInstance, wrap
-);
+React.render(<App />, wrap);

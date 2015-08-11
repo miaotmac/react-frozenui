@@ -26,3 +26,4 @@ _site/
 *.build
 *.grunt
 .ftppass
+dist
