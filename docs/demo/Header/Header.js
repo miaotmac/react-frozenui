@@ -1,6 +1,6 @@
 
-var React = require('react');
-var Header = React.createClass({
+let React = require('react');
+let Header = React.createClass({
 	render:function(){
 		return (
 			<div className="head-area normal">

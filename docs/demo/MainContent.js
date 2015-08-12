@@ -1,11 +1,13 @@
+
 let React = require('react');
-let Content = React.createClass({
+let MainContent = React.createClass({
 		render:function(){
 			return (
-				<div className="content" >
+				<div className="main-content" >
 					{this.props.children}
 				</div>
 				);
 		}
 	});
-module.exports = Content;
+
+module.exports = MainContent;
