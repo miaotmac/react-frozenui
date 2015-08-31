@@ -1,5 +1,9 @@
-
 let React = require('react');
+var Router = require('react-router');
+var Route = Router.Route;
+var DefaultRoute = Router.DefaultRoute;
+var RouteHandler = Router.RouteHandler;
+var Link = Router.Link;
 let Header = React.createClass({
 	render:function(){
 		return (
@@ -8,13 +12,11 @@ let Header = React.createClass({
 			            <div className="title-area"><h1><a href="/">Frozen UI</a></h1></div>
 			            <div className="nav-area"><a className="nav-toggle"></a>
 			                <ol className="main-nav slideDown">
-			                    <li><a href="start.html">快速开始</a></li>
-			                    <li><a href="base.html">基础组件</a></li>
-			                    <li><a href="components.html">UI 组件</a></li>
-			                    <li><a href="http://frozenui.github.io/frozenjs/">JS 插件</a></li>
-			                    <li><a href="case.html">动效库</a></li>
-			                    <li><a href="customize.html">下载</a></li>
-			                    <li><a href="/frozenui/demo/index.html">Demo</a></li>
+			                    <li><Link to="gettingstart">快速开始</Link></li>
+			                    <li><Link to="base">基础组件</Link></li>
+			                    <li><Link to="components">UI 组件</Link></li>
+			                    <li><Link to="download">下载</Link></li>
+			                    <li><Link to="demo">Demo</Link></li>
 			                    <li><a href="https://github.com/frozenui/frozenui">GitHub</a></li>
 			                </ol>
 			            </div>
@@ -26,3 +28,4 @@ let Header = React.createClass({
 
 
 module.exports = Header;
+

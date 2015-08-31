@@ -35,7 +35,7 @@
                 { test: /\.js$/, loaders: ['jsx-loader?harmony','react-hot'] },
                 { test: /\.scss$/, loader: 'style!css!sass?sourceMap'},
                 { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192'},
-                { test: /\.jsx?$/,exclude: /(node_modules|bower_components)/,loaders: ['babel','react-hot']}
+                { test: /\.jsx?$/,exclude: /(node_modules|bower_components)/,loaders: ['react-hot','babel']}
             ]
         },
         resolve: {
